@@ -2,14 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>ThankQR PWA</title>
-
-  <!-- PWA 설정 -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#000000" />
-  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>ThankQR Swiper</title>
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
@@ -18,19 +12,15 @@
     html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100%;
+      width: 100%;
       overflow: hidden;
       background: #000;
-      box-sizing: border-box;
-    }
-    *, *::before, *::after {
-      box-sizing: inherit;
     }
     .swiper {
       width: 100vw;
       height: 100dvh;
-      height: 100vh; /* fallback */
+      height: 100vh;
     }
     .swiper-slide {
       display: flex;
@@ -41,8 +31,8 @@
     .swiper-slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center 20%; /* 마이크 살리기 */
+      object-fit: cover;              /* ✅ 여백 없이 꽉 채움 */
+      object-position: center 20%;   /* ✅ 마이크 안 잘리게 중심 위로 */
       display: block;
     }
   </style>
@@ -51,7 +41,6 @@
 
   <div class="swiper">
     <div class="swiper-wrapper">
-      <!-- 이미지 경로는 image/1.png ~ image/10.png -->
       <div class="swiper-slide"><img src="image/1.png" alt="화면1" /></div>
       <div class="swiper-slide"><img src="image/2.png" alt="화면2" /></div>
       <div class="swiper-slide"><img src="image/3.png" alt="화면3" /></div>
@@ -74,13 +63,6 @@
       slidesPerView: 1,
       spaceBetween: 0
     });
-  </script>
-
-  <!-- Service Worker 등록 -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    }
   </script>
 
 </body>
