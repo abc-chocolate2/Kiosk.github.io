@@ -1,28 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ThankQR Snap</title>
+  <title>ThankQR Swiper</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+    }
+    .swiper {
+      width: 100vw;
+      height: 100vh;
+    }
+    .swiper-slide {
       display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      width: 100vw;
-      height: 100vh;
+      align-items: center;
+      justify-content: center;
     }
-    .slide {
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      width: 100vw;
-      height: 100vh;
-    }
-    .slide img {
+    .swiper-slide img {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -30,15 +31,35 @@
   </style>
 </head>
 <body>
-  <div class="slide"><img src="image/1.png" alt="화면1"></div>
-  <div class="slide"><img src="image/2.png" alt="화면2"></div>
-  <div class="slide"><img src="image/3.png" alt="화면3"></div>
-  <div class="slide"><img src="image/4.png" alt="화면4"></div>
-  <div class="slide"><img src="image/5.png" alt="화면5"></div>
-  <div class="slide"><img src="image/6.png" alt="화면6"></div>
-  <div class="slide"><img src="image/7.png" alt="화면7"></div>
-  <div class="slide"><img src="image/8.png" alt="화면8"></div>
-  <div class="slide"><img src="image/9.png" alt="화면9"></div>
-  <div class="slide"><img src="image/10.png" alt="화면10"></div>
+
+  <!-- Swiper container -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="image/1.png" alt="화면1" /></div>
+      <div class="swiper-slide"><img src="image/2.png" alt="화면2" /></div>
+      <div class="swiper-slide"><img src="image/3.png" alt="화면3" /></div>
+      <div class="swiper-slide"><img src="image/4.png" alt="화면4" /></div>
+      <div class="swiper-slide"><img src="image/5.png" alt="화면5" /></div>
+      <div class="swiper-slide"><img src="image/6.png" alt="화면6" /></div>
+      <div class="swiper-slide"><img src="image/7.png" alt="화면7" /></div>
+      <div class="swiper-slide"><img src="image/8.png" alt="화면8" /></div>
+      <div class="swiper-slide"><img src="image/9.png" alt="화면9" /></div>
+      <div class="swiper-slide"><img src="image/10.png" alt="화면10" /></div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Swiper 설정 -->
+  <script>
+    new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: false,
+      slidesPerView: 1,
+      spaceBetween: 0
+    });
+  </script>
+
 </body>
 </html>
