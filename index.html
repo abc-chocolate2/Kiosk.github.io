@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>ThankQR Swiper</title>
+  <title>ThankQR</title>
 
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
@@ -14,24 +14,39 @@
       padding: 0;
       height: 100%;
       width: 100%;
-      overflow: hidden;
+      overflow-x: hidden;
       background: #000;
+      box-sizing: border-box;
     }
+
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+
     .swiper {
       width: 100vw;
-      height: 100vh;
+      height: 100dvh; /* ← 진짜 보이는 화면 높이 */
+      height: 100vh;   /* fallback for old browsers */
     }
+
     .swiper-slide {
       display: flex;
       align-items: center;
       justify-content: center;
       background: #000;
+      padding: 0;
+      margin: 0;
+      max-width: 100vw;
+      overflow: hidden;
     }
+
     .swiper-slide img {
       width: 100%;
       height: auto;
-      max-height: 100vh;
+      max-width: 100vw;
+      max-height: 100dvh;
       object-fit: contain;
+      display: block;
     }
   </style>
 </head>
@@ -65,4 +80,3 @@
 
 </body>
 </html>
-
